@@ -1,9 +1,14 @@
 require 'rubygems'
 require 'bundler/setup'
 
-require 'sinatra'
+require 'sinatra/base'
 require 'faker'
 
-get '/lorem' do
-  Faker::Lorem.paragraph
+
+class ApplicationController < Sinatra::Base
+
+  get "/lorem" do
+    Faker::Lorem.paragraph
+  end
+
 end
