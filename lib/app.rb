@@ -10,13 +10,13 @@ class App < Sinatra::Base
     erb :index
   end
 
-  Faker::Address.methods.each do |method|
+  (Faker::Address.methods - Object.methods).each do |method|
     get "/Address/#{method}" do
       Faker::Address.send(method)
     end
   end
 
-  Faker::Lorem.methods.each do |method|
+  (Faker::Lorem.methods - Object.methods).each do |method|
     get "/Lorem/#{method}" do
       Faker::Lorem.send(method)
     end
