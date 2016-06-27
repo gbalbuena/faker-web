@@ -6,6 +6,10 @@ require 'faker'
 
 class App < Sinatra::Base
 
+  get '/' do
+    erb :index
+  end
+
   Faker::Address.methods.each do |method|
     get "/Address/#{method}" do
       Faker::Address.send(method)
