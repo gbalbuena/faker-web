@@ -1,1 +1,9 @@
 <h1>Hello World</h1>
+
+<fieldset>
+  <legend>Lorem</legend>
+
+  <% @lorem.each do |method| %>
+    <a href="/<%= "Lorem/#{method}" %>"><%= method %></a>
+  <% end %>
+</fieldset>

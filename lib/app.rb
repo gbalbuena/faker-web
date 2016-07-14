@@ -2,21 +2,16 @@ require 'rubygems'
 require 'bundler/setup'
 
 require 'sinatra/base'
-require 'faker'
+require_relative 'faker_utils'
 
 class App < Sinatra::Base
 
   get '/' do
+    @lorem = FakerUtils.lorem
     erb :index
   end
 
-  (Faker::Address.methods - Object.methods).each do |method|
-    get "/Address/#{method}" do
-      Faker::Address.send(method)
-    end
-  end
-
-  (Faker::Lorem.methods - Object.methods).each do |method|
+  FakerUtils.lorem.each do |method|
     get "/Lorem/#{method}" do
       Faker::Lorem.send(method)
     end
