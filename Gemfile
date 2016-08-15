@@ -7,4 +7,4 @@ gem 'puma'
 gem 'sinatra', '~> 1.4', '>= 1.4.7'
 
 # Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.
-gem 'faker', '~> 1.6', '>= 1.6.3'
+gem 'faker', '~> 1.6', '>= 1.6.6'
