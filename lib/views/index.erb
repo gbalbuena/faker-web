@@ -1,19 +1,26 @@
 <h2>Address</h2>
 <% @address.each do |method| %>
   <a href="/<%= "Address/#{method}" %>"><%= method %></a>
+  <%= Faker::Address.method(method).parameters %>
+  <br>
 <% end %>
 
 <h2>Lorem</h2>
 <% @lorem.each do |method| %>
   <a href="/<%= "Lorem/#{method}" %>"><%= method %></a>
+  <%= Faker::Lorem.method(method).parameters %>
+  <br>
 <% end %>
 
 <h2>Game of Thrones</h2>
 <% @game_of_thrones.each do |method| %>
   <a href="/<%= "GameOfThrones/#{method}" %>"><%= method %></a>
+  <%= Faker::GameOfThrones.method(method).parameters %>
+  <br>
 <% end %>
 
 <h2>Pokemon</h2>
 <% @pokemon.each do |method| %>
   <a href="/<%= "Pokemon/#{method}" %>"><%= method %></a>
+  <%= Faker::Pokemon.method(method).parameters %>
 <% end %>
